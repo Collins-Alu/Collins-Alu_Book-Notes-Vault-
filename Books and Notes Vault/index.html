@@ -11,19 +11,64 @@
     <h1>
     Vault
     </h1>
-</header>
-<nav aria-label="Primary Navigation">
-    <ul>
-        <li><a href="#" class= "active">Home</a></li>
-        <li><a href="#">Dashboard</a></li>
-        <li><a href="#">Record Table</a></li>
-        <li><a href="#">Add/Edit form</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Settings</a></li>
+    <nav aria-label="Primary Navigation">
+    <ul class="nav-list">
+        <li><button class="nav-button active" data-target="View dashboard" aria-current="page">Dashboard</button></li>
+        <li><button class="nav-button" data-target="View record table">Records</button></li>
+        <li><button class="nav-button" data-target="View Forms">Forms</button></li>
+        <li><button class="nav-button" data-target="View about">About</buttonclass></button></li>
+        <li><button class="nav-button" data-target="View Settings">Settings</button></li>
     </ul>
-    
-</nav>
-<main>
+    </nav>
+</header>
+
+<main id="main content">
+    <section id="View dashboard" class="View-section">
+        <h2>Dashboard</h2>
+    </section>
+</main>
+
+<main id="View record table" class="View section hidden">
+    <header class="view-header">
+        <h2>Records</h2>
+
+         <div class="Vault-control">
+             <div class="Search bar">
+                 <label for="Search input" class="Visually hidden">Search records (search regex)</label>
+                 <input type="text" id="Search input" placeholder="Search title (Regex OK)...">
+                     <label class="Checkbox label">
+                     <input type="checkbox" id="regex-case-toggle"> match case 
+                 </label>
+             </div>
+
+        <div class="Sort bar">
+            <label for="Sort select">Sort by:</label>
+            <select id="Sort select">
+                <option value="date desc"></option>
+                <option value="date asce"></option>
+                <option value="title asc"></option>
+                <option value="title desc"></option>
+                <option value="page desc"></option>
+                <option value="page asc"></option>
+            </select>
+
+        </div>
+         </div>
+    </header>
+
+
+</main>
+
+<main id="View forms" class="View section hidden">
+    <h2>Forms</h2>
+</main>
+
+<main id="View about" class="View section hidden">
+    <h2>About</h2>
+</main>
+
+<main id="View settings" class="View section hidden">
+    <h2>Settings</h2>
 </main>
 
 </body>
