@@ -24,40 +24,98 @@
 
 <main id="main content">
     <section id="View dashboard" class="View-section">
-        <h2>Dashboard</h2>
+        <header class="View header">
+             <h2>Dashboard</h2>
+        </header>
+
+        <article class="dashboard-widget">
+            <h3>Goal</h3>
+            <div class="goal controls">
+                <label for="page goal"></label>
+                <input type="number" id="page goal" min="1" step="1" placeholder="">
+                <button type="button" id="save goal" class="main"></button>
+            </div>
+
+            <div id="goal status" aria-live="polite" class="goal status" role="status">
+                Set a reading goal
+            </div>
+
+
+            <div class="progress" aria-hidden="true">
+                <div id="goal progress" class="progress" style="width:0;"></div>
+            </div>
+        </article>
+
+        <div class="stats grid">
+            <article class="stat card">
+                <h3 class="Stat title">Pages read</h3>
+                <p id class="total books" class="stats">0</p>
+            </article>
+
+            <article class="stat card">
+                <h3 class="stat tittle">total pages read</h3>
+                <p id class="total pages" class="stats">0</p>
+            </article>
+
+            <article class="stat card">
+                <h3 class="stat title">top genre</h3>
+                <p id class="stat top genre" class="stats">-</p>
+            </article>
+        </div>
+
+        <article class="stats widget trend">
+            <h3>Activity</h3>
+
+            <div id="trend chart" class="chart" aria-label="pages read past week" role="img">
+
+            </div>
+        </article>
     </section>
-</main>
 
-<main id="View record table" class="View section hidden">
-    <header class="view-header">
-        <h2>Records</h2>
+    <section id="View record table" class="View section hidden">
+        <header class="view-header">
+            <h2>Records</h2>
 
-         <div class="Vault-control">
-             <div class="Search bar">
-                 <label for="Search input" class="Visually hidden">Search records (search regex)</label>
-                 <input type="text" id="Search input" placeholder="Search title (Regex OK)...">
+            <div class="Vault-control">
+                 <div class="Search bar">
+                     <label for="Search input" class="Visually hidden">Search records (search regex)</label>
+                    <input type="text" id="Search input" placeholder="Search title (Regex OK)...">
                      <label class="Checkbox label">
                      <input type="checkbox" id="regex-case-toggle"> match case 
-                 </label>
-             </div>
+                     </label>
+                 </div>
 
-        <div class="Sort bar">
-            <label for="Sort select">Sort by:</label>
-            <select id="Sort select">
-                <option value="date desc"></option>
-                <option value="date asce"></option>
-                <option value="title asc"></option>
-                <option value="title desc"></option>
-                <option value="page desc"></option>
-                <option value="page asc"></option>
-            </select>
+            <div class="Sort bar">
+                <label for="Sort select">Sort by:</label>
+                <select id="Sort select">
+                    <option value="date desc"></option>
+                    <option value="date asce"></option>
+                    <option value="title asc"></option>
+                    <option value="title desc"></option>
+                    <option value="page desc"></option>
+                    <option value="page asc"></option>
+                </select>
 
-        </div>
+            </div>
+            </div>
+        </header>
+
+         <div class="tables">
+             <table id="books table">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody id="books" aria-live="polite"></tbody>
+
+        </table>
          </div>
-    </header>
-
-
-</main>
+    </section>
 
 <main id="View forms" class="View section hidden">
     <h2>Forms</h2>
