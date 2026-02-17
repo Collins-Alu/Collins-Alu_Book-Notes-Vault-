@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Books and Notes Vault</title>
+
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/components.css">
 </head>
 <body>
 <a href="#Main-content" class="skip-link">Skip to content</a>
@@ -16,8 +20,8 @@
         <li><button class="nav-button active" data-target="View dashboard" aria-current="page">Dashboard</button></li>
         <li><button class="nav-button" data-target="View record table">Records</button></li>
         <li><button class="nav-button" data-target="View Forms">Forms</button></li>
-        <li><button class="nav-button" data-target="View about">About</buttonclass></button></li>
-        <li><button class="nav-button" data-target="View Settings">Settings</button></li>
+        <li><button class="nav-button" data-target="View about">About</button></button></li>
+        <li><button class="nav-button" data-target="View Settings">Settings</button></li> 
     </ul>
     </nav>
 </header>
@@ -46,18 +50,18 @@
             </div>
         </article>
 
-        <div class="stats grid">
+        <div class="stats_grid">
             <article class="stat card">
                 <h3 class="Stat title">Pages read</h3>
                 <p id class="total books" class="stats">0</p>
             </article>
 
-            <article class="stat card">
+            <article class="stat_card">
                 <h3 class="stat tittle">total pages read</h3>
                 <p id class="total pages" class="stats">0</p>
             </article>
 
-            <article class="stat card">
+            <article class="stat_card">
                 <h3 class="stat title">top genre</h3>
                 <p id class="stat top genre" class="stats">-</p>
             </article>
@@ -79,7 +83,7 @@
             <div class="Vault-control">
                  <div class="Search bar">
                      <label for="Search input" class="Visually hidden">Search records (search regex)</label>
-                    <input type="text" id="Search input" placeholder="Search title (Regex OK)...">
+                    <input type="text" id="Search input" placeholder="Search title...">
                      <label class="Checkbox label">
                      <input type="checkbox" id="regex-case-toggle"> match case 
                      </label>
@@ -117,16 +121,95 @@
          </div>
     </section>
 
-<main id="View forms" class="View section hidden">
-    <h2>Forms</h2>
-</main>
+<section id="View forms" class="View section hidden">
+    <header class="view header">
+        <h2>Forms</h2>
+    </header>
 
-<main id="View about" class="View section hidden">
-    <h2>About</h2>
-</main>
+    <form id="books" class="Vault">
 
-<main id="View settings" class="View section hidden">
-    <h2>Settings</h2>
+        <input type="hidden" id="bookID" name="bookID" value="">
+
+        <div class="form">
+            <label for="title">Title</label>
+            <input type="text" id="bookID" required aria-describedby="title error">
+            <small class="form help"></small>
+            <div id="title error" class="error message" aria-live="polite"></div>
+        </div>
+
+        <div class="form">
+            <label for="pages">Pages</label>
+            <input type="number" id="pages" min="1" required aria-describedby="page error">
+            <small class="help"></small>
+            <div id="page error" class="error message" aria-live="polite"></div>
+
+        </div>
+        
+        <div class="form">
+            <label for="genre">Genre</label>
+            <input type="text" id="genre" required aria-describedby="genre error">
+            <small class="help"></small>
+            <div id="genre error" class="error message" aria-live="polite"></div>
+        </div>
+
+        <div class="form">
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date" required aria-describedby="date error">
+            <small class="help"></small>
+            <div id="date error" class="error message" aria-live="polite"></div>
+        </div>
+
+        <div class="actions">
+            <button type="save" class="primary"></button>
+            <button type="button" id="cancel button" class="secondary"></button>
+        </div>
+    </form>
+    
+
+
+    <section id="View about" class="View section hidden">
+        <header class="view header">
+            <h2>About</h2>
+        </header>
+
+        <article class="About">
+            <h3>Why</h3>
+            <p> A books and note vault</p>
+
+            <h3>Contact</h3>
+            <strong>Email</strong>
+            <a href="c.wairimu@alustudent.com"></a>
+
+        </article>
+
+    <section id="View settings" class="View section hidden">
+        <header class="view header">
+            <h2>Settings</h2>
+        </header>
+
+        <article class="settings">
+            <h3>Mode</h3>
+
+            <div class="setting">
+                <label for="mode" class="setting"></label>
+                <input type="checkbox" id="mode" role="switch" aria-checked="false">
+            </div>
+
+            <hr class="setting divider">
+
+            <h3>D.Management</h3>
+            <p class="setting" desc></p>
+
+            <div class="setting action">
+                <button type="button" id="button export json" class="secondary"></button>
+
+                <label for="import json" class="visually hidden"></label>
+                <input type="file" id="impot json" accept="json" class="hidden input">
+                <button type="button" id="import json" class="button primary"></button>
+            </div>
+
+            <div id="settings status" aria-live="polite" class="status message"></div>
+        </article>
 </main>
 
 </body>

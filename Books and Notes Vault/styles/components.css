@@ -1,0 +1,157 @@
+.nav-button, .primary, .secondary {
+    padding: 1rem;
+    border:black;
+    cursor: pointer;
+    font-weight: 200;
+    transition: background 0.2 ease, transform 0.1 ease;
+}
+
+.nav-button, .primary, .secondary{
+    background: lightblue; 
+    color: beige;
+}
+
+.nav-button:hover, .secondary:hover {
+    background:var(grey);
+}
+
+.nav-button-active{
+    background: var(lightblue);
+}
+
+.primary{
+    background: var(lightblue); 
+    color: white;
+    padding: 1rem 1rem;
+}
+
+.primary:hover{
+    background: lightblue;
+}
+
+.stat_card  .dashboard-widget{
+    background: var(white);
+    padding: 1rem;
+    border-radius: 7px;
+    text-align: center;
+}
+
+.value{
+    font-size: medium;
+    font-weight: 300;
+    color: lightblue;
+}
+
+.css-chart{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    height: 150px;
+    padding-top: 150px;
+    border-bottom:1px solid black;
+    margin-top:1rem;
+}
+
+.vault-form {
+    background: white;
+    padding: 1rem;
+    border-radius: 7px;
+    max-width: 500px;
+    margin: 0px;
+}
+
+.form{
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+.form label{
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+input[type="text"],
+input[type="number"],
+input[type="date"],
+
+select {
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: beige;
+    color: blue;
+}
+
+.error-message{
+    color: red;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    min-height: 1rem;
+}
+
+.form-help{
+    font-size: 1rem;
+    color:grey;
+    margin-top: 0.5rem;
+}
+
+table{
+    width: 100%;
+    border-collapse: white;
+}
+mark{
+    background-color: black;
+    color: lightblue;
+    font-weight: bold; 
+}
+
+@media (max-width: 500px) {
+    table, thead, body, th, td, tr {display: block;}
+    thead tr {position: absolute; top: -9999px; right: -9999px;} 
+    tr {
+        background: white; 
+        margin-bottom: 1rem;
+        border-radius: 7px;
+        }
+    td {
+        position: relative;
+        padding: 1rem 1 1rem 100%;
+    }
+    td:last-child{
+        border-bottom: none;
+        text-align: center;
+        padding-left: 0;
+        margin-top: 1rem;          
+    }
+    td::before{
+        content: attr(data-label);
+        position: absolute;
+        width: 50%; 
+        font-weight:bold;
+        text-align: left;
+        color: white;
+    }
+}
+
+@media (min-width:700px) {
+    th, td {
+        padding: 1rem; 
+        text-align:left;
+        border-bottom: 1px solid var(black);
+    }
+    th {
+        background-color: white;
+        color: rgb(152, 181, 190);
+    }
+    tr {
+        background: white;
+        transition: background color 0.2 ease;
+    }
+    tr:hover {
+        background-color: grey;
+    }
+    td::before{display: none;}
+}
+
+
+
