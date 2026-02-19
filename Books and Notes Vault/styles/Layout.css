@@ -1,5 +1,5 @@
 header{
-    background-color: antiquewhite;
+    background-color:var(--surface-color);
     padding: 1rem;
     text-align: center;
 }

@@ -1,10 +1,16 @@
 /* mode */
 :root {
---bg-color: ;
---text-main: ;
+--bg-color: grey;
+--text-main: black;
+--text-muted:grey;
+--primary-color:lightblue;
+--surface-color:beige;
+
+
+
 
 };
 
 body{
-    
+
 }
