@@ -155,7 +155,7 @@ function setupEventListeners()
       searchInput.setCustomValidity(error);
       searchInput.reportValidity();
     } else {
-    
+
       searchInput.setCustomValidity('');
       UI.renderTable(filteredBooks, activeRegex);
     }
