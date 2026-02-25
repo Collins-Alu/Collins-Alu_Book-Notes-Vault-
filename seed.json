@@ -1,0 +1,38 @@
+[
+  {
+    "title": "The Pragmatic Programmer",
+    "pages": 352,
+    "genre": "Tech",
+    "date": "2023-10-10"
+  },
+  {
+    "title": "Dune",
+    "pages": 896,
+    "genre": "Sci-Fi",
+    "date": "2023-10-11"
+  },
+  {
+    "title": "Atomic Habits",
+    "pages": 320,
+    "genre": "Self-Help",
+    "date": "2023-10-12"
+  },
+  {
+    "title": "Project Hail Mary",
+    "pages": 496,
+    "genre": "Sci-Fi",
+    "date": "2023-10-13"
+  },
+  {
+    "title": "1984",
+    "pages": 328,
+    "genre": "Classic",
+    "date": "2023-10-14"
+  },
+  {
+    "title": "The The Great Gatsby",
+    "pages": 180,
+    "genre": "Classic",
+    "date": "2023-10-15"
+  }
+]

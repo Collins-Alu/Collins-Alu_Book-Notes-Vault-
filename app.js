@@ -27,25 +27,56 @@ function refreshApp() {
 }
 
 function setupEventListeners()
-  
-  document.querySelectorAll('.nav-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      const targetId = e.target.getAttribute('data-target');
+
+ document.getElementById('btn-export-json').addEventListener('click', () => {
+    if (State.books.length === 0) {
+      UI.showStatus('No data to export!', 'error');
+      return;
+    }
+
+    Storage.exportJSON(State.books);
+    UI.showStatus('Vault exported successfully!');
+  });
+
+  document.getElementById('btn-import-json').addEventListener('click', () => {
+    document.getElementById('file-import-json').click();
+  });
+
+
+  document.getElementById('file-import-json').addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (!file) return; 
+
+    const reader = new FileReader();
+
+    
+    reader.onload = (event) => {
+      try {
       
+        const importedData = JSON.parse(event.target.result);
+        
       
-      document.querySelectorAll('.nav-btn').forEach(b => {
-        b.classList.remove('active');
-        b.removeAttribute('aria-current');
-      });
-      e.target.classList.add('active');
-      e.target.setAttribute('aria-current', 'page');
+        if (Storage.validateImport(importedData)) {
+          State.importData(importedData); 
+          refreshApp(); 
+          UI.showStatus('Data imported successfully!');
+          
+
+          document.querySelector('[data-target="view-records"]').click();
+        } else {
+          UI.showStatus('Invalid JSON structure. Import failed.', 'error');
+        }
+      } catch (err) {
+      
+        UI.showStatus('Error reading file. Make sure it is valid JSON.', 'error');
+      }
+      
+     
+      e.target.value = ''; 
+    };
 
    
-      document.querySelectorAll('.view-section').forEach(section => {
-        section.classList.add('hidden');
-      });
-      document.getElementById(targetId).classList.remove('hidden');
-    });
+    reader.readAsText(file);
   });
 
 
