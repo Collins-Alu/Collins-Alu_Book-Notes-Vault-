@@ -26,7 +26,7 @@ function refreshApp() {
   UI.renderDashboard(books, State.prefs.goal);
 }
 
-function setupEventListeners() 
+function setupEventListeners()
   
   document.querySelectorAll('.nav-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
