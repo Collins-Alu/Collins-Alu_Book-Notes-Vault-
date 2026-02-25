@@ -1,5 +1,5 @@
 
-import { State } from './state.js';
+import { State } from './Books and Notes Vault/Scripts/state.js';
 import { Storage } from './storage.js';
 import { Validators } from './validators.js'; 
 import { UI } from './ui.js';
